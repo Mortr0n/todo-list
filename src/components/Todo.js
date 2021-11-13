@@ -5,7 +5,7 @@ const Todo = (props) => {
     const { todoList, setTodoList, } = props;
     const [todo, setTodo] = useState("");
     
-
+    // handle submit prevent page refresh, create the todo item and set completed to false initially
     const submitHandler = (e) => {
         e.preventDefault(e);
 
@@ -25,6 +25,7 @@ const Todo = (props) => {
             <form onSubmit={submitHandler} >
                 <p>
                     <label htmlFor="todo">Todo :</label>
+                    {/* set todo item to the value in the input box */}
                     <input name="todo" type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
                 </p>
                 <input type="submit" value="Add Item" />
