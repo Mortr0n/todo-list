@@ -6,24 +6,15 @@ import Display from './components/Display';
 function App() {
 
   const [todoList, setTodoList] = useState([]);
-  const [complete, setComplete] = useState(false);
-
-
-
-
+  
   return (
     <div className="App">
-      
-
       <Todo todoList={todoList} setTodoList={setTodoList} />
       <Display 
       todoList={todoList} 
-      complete={complete} 
-      setComplete={setComplete} 
       setTodoList={setTodoList}
       />
-
-    </div>
+  </div>
   );
 }
 

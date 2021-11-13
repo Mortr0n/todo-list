@@ -26,14 +26,17 @@ const Display = (props) => {
                         flexDirection:'row',
                         justifyContent:'center',
                     }}>
-                        <p>{todoItem.todo}</p>
-                        <button onClick={() => completeHandler(todoItem, index) } >Complete</button>
-                        <button onClick={() => deleteTodoItem(index)} style={{ backgroundColor:'red'}}>Delete</button>
+                        {todoItem.complete == true  ?
+                        <p style={{textDecoration:'line-through'}}>{todoItem.todo}</p>
+                             :
+                            <p>{todoItem.todo}</p>
+                        }
+                        <button onClick={() => completeHandler(todoItem, index) } style={{color:'white', marginRight:'10px', marginBottom:'10px', backgroundColor:'blue', borderRadius:'10px', boxShadow:'3px 3px gray'}} >Complete</button>
+                        <button onClick={() => deleteTodoItem(index)} style={{ backgroundColor:'red', borderRadius:'10px', marginBottom:'10px', boxShadow:'3px 3px gray'}}>Delete</button>
                     </div>
                 ))
             }
         </div>
-
     )
 
 }

@@ -28,6 +28,7 @@ const Todo = (props) => {
                     <input name="todo" type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
                 </p>
                 <input type="submit" value="Add Item" />
+                <hr />
             </form>
 
         </div>
