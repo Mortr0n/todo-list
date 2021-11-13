@@ -11,6 +11,11 @@ const Display = (props) => {
         )
     }
 
+    const deleteTodoItem = (index) => {
+        const filteredTodo = todoList.filter( (element, idx) => idx !== index);
+        setTodoList(filteredTodo);
+    }
+
 
     return(
         <div className="display">
@@ -23,6 +28,7 @@ const Display = (props) => {
                     }}>
                         <p>{todoItem.todo}</p>
                         <button onClick={() => completeHandler(todoItem, index) } >Complete</button>
+                        <button onClick={() => deleteTodoItem(index)} style={{ backgroundColor:'red'}}>Delete</button>
                     </div>
                 ))
             }
